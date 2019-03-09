@@ -13,4 +13,13 @@ module.exports = {
     filename: '[name].[hash].bundle.js',
     path: path.resolve(appDir, 'build'),
   },
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        loader: 'babel-loader',
+        include: path.resolve(appDir, 'src'),
+      },
+    ],
+  },
 };
