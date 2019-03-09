@@ -13,6 +13,13 @@ module.exports = {
     filename: '[name].[hash].bundle.js',
     path: path.resolve(appDir, 'build'),
   },
+  resolve: {
+    alias: {
+      pages: path.resolve(appDir, 'src/pages'),
+      modules: path.resolve(appDir, 'src/modules'),
+      components: path.resolve(appDir, 'src/components'),
+    },
+  },
   module: {
     rules: [
       {
