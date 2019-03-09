@@ -1,6 +1,7 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 const common = require('./webpack.common.js');
 
@@ -14,6 +15,11 @@ module.exports = merge(common, {
       template: path.resolve(appDir, 'public/index.html'),
       hash: true,
     }),
+    new FriendlyErrorsWebpackPlugin({
+      compilationSuccessInfo: {
+        messages: ['Project is running at http://localhost:3000'],
+      },
+    }),
   ],
   devServer: {
     port: 3000,
@@ -21,5 +27,6 @@ module.exports = merge(common, {
     compress: true,
     hot: true,
     stats: 'minimal',
+    quiet: true,
   },
 });

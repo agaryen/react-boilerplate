@@ -23,6 +23,12 @@ module.exports = {
   module: {
     rules: [
       {
+        enforce: 'pre',
+        test: /\.jsx?$/,
+        loader: 'eslint-loader',
+        include: path.resolve(appDir, 'src'),
+      },
+      {
         test: /\.jsx?$/,
         loader: 'babel-loader',
         include: path.resolve(appDir, 'src'),
