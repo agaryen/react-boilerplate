@@ -25,6 +25,7 @@ module.exports = merge(common, {
     port: 3000,
     contentBase: path.resolve(appDir, 'public'),
     compress: true,
+    historyApiFallback: true,
     hot: true,
     stats: 'minimal',
     quiet: true,
